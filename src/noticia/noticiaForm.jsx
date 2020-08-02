@@ -13,6 +13,7 @@ class NoticiaForm extends Component {
     }
 
     componentWillMount() {
+        this.props.clear()
         this.props.search()
     }
 

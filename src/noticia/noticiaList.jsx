@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 import IconButton from '../template/iconButton'
-import { remove } from './noticiaActions'
+import { remove, open } from './noticiaActions'
 
 const NoticiaList = props => {
 
@@ -14,8 +14,10 @@ const NoticiaList = props => {
                 <td className='titulo'>{noticia.titulo}</td>
                 <td className='conteudo'>{noticia.conteudo}</td>
                 <td>
-
-                    <IconButton style='danger' icon='trash-o' hide="false"
+                    <IconButton style='info' icon='search'
+                        onClick={() => {window.location.href = '#/noticia/'+noticia._id}}></IconButton>
+                        
+                    <IconButton style='danger' icon='trash-o'
                         onClick={() => props.remove(noticia)}></IconButton>
                 </td>
             </tr>
@@ -40,5 +42,5 @@ const NoticiaList = props => {
 
 const mapStateToProps = state => ({list: state.noticia.list})
 const mapDispatchToProps = dispatch => 
-    bindActionCreators({ remove }, dispatch)
+    bindActionCreators({ remove, open }, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(NoticiaList)
