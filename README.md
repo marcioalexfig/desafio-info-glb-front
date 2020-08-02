@@ -8,3 +8,6 @@
 
 # iniciar o front
 * npm run dev
+
+# abrir no navegador
+http://localhost:8080/
