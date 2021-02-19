@@ -1,6 +1,6 @@
 # desafio-info-glb-front
 
-# istalar dependencias /front
+# instalar dependencias /front
 * npm
 
 # instalar servidor se necessário /front
